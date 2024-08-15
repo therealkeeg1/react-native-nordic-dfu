@@ -48,7 +48,9 @@ public class RNNordicDfuModule extends ReactContextBaseJavaModule implements Lif
 
         if(options.hasKey("disableResume")) {
           boolean disableResume = options.getBoolean("disableResume");
-          starter.setDisableResume(disableResume);
+          if(disableResume){
+            starter.disableResume();
+          }
         }
 
         if (name != null) {
