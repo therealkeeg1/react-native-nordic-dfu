@@ -45,6 +45,12 @@ public class RNNordicDfuModule extends ReactContextBaseJavaModule implements Lif
           int mtu = options.getInt("maxMtu");
           starter.setMtu(mtu);
         }
+
+        if(options.hasKey("disableResume")) {
+          boolean disableResume = options.getBoolean("disableResume");
+          starter.setDisableResume(disableResume);
+        }
+
         if (name != null) {
             starter.setDeviceName(name);
         }
